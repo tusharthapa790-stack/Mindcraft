@@ -8,7 +8,7 @@ let maxPrice = prices[0];
 let mostExpensive = items[0];
 
 for (let i = 0; i < items.length; i++) {
-    console.log(`${items[i]} - $${prices[i].toFixed(2)}`);
+    console.log(`${items[i]} - Rs.${prices[i].toFixed(2)}`);
     total += prices[i];
     if (prices[i] > 3) {
         overThree++;
@@ -21,8 +21,8 @@ for (let i = 0; i < items.length; i++) {
 }
 
 console.log("-------------------");
-console.log(`Total: $${total.toFixed(2)}`);
-console.log(`Items over $3.00: ${overThree}`);
+console.log(`Total: Rs.${total.toFixed(2)}`);
+console.log(`Items over Rs.3.00: ${overThree}`);
 console.log(`Most expensive: ${mostExpensive}`);
 
 
@@ -35,15 +35,15 @@ const cart = [
     { name: "Butter", price: 4.4 },
 ];
 
-const receiptLines = cart.map(item => `${item.name} - $${item.price.toFixed(2)}`);  // 1. map() - Receipt lines
+const receiptLines = cart.map(item => `${item.name} - Rs.${item.price.toFixed(2)}`);  // 1. map() - Receipt lines
 receiptLines.forEach(line => console.log(line));
 const cartTotal = cart.reduce((sum, item) => sum + item.price, 0);  // 2. reduce() - Total price
 
 console.log("-------------------");
-console.log(`Total: $${cartTotal.toFixed(2)}`);
+console.log(`Total: Rs.${cartTotal.toFixed(2)}`);
 
-const expensiveItems = cart.filter(item => item.price > 3);   // 3. filter() - Items over $3.00
-console.log(`Items over $3.00: ${expensiveItems.length}`);
+const expensiveItems = cart.filter(item => item.price > 3);   // 3. filter() - Items over Rs3.00
+console.log(`Items over Rs.3.00: ${expensiveItems.length}`);
 
 const discountedCart = cart.map(item => ({     // Bonus: 10% Discount using map()
     name: item.name,
@@ -55,4 +55,4 @@ const discountedTotal = discountedCart.reduce(
     0
 );
 
-console.log(`Total after 10% off: $${discountedTotal.toFixed(2)}`);
+console.log(`Total after 10% off: Rs.${discountedTotal.toFixed(2)}`);
